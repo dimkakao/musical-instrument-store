@@ -10,7 +10,7 @@ public class Main {
         Shop myShop = null;
         System.out.println("1 - Read from file. 2 - Enter everything from the beginning");
         if (MyUtilFunctions.enteringInt() == 1)
-            myShop = (Shop) ReadWriteObject.objectRead("Data.dat");
+            myShop = (Shop) ReadWriteObject.objectRead("Data.bin");
 
         if (null == myShop) myShop = new Shop();
 
@@ -129,7 +129,7 @@ public class Main {
                 case 0  -> {
                     System.out.println("Do you want to save it?\n1 - Yes. 2 - No.");
                     if (MyUtilFunctions.enteringInt() == 1)
-                        ReadWriteObject.objectWrite(myShop,"Data.dat");
+                        ReadWriteObject.objectWrite(myShop,"Data.bin");
                     return;}
                 default-> System.out.println("You made an incorrect selection. Please try again");
             }
